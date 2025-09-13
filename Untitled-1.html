@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite Trio Cafe Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: white;
+      overflow: hidden;
+    }
+
+    /* Scribble Background Layer */
+    .scribble-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .scribble-line {
+      position: absolute;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 6px 2px white;
+      opacity: 0.1; /* More visible */
+    }
+
+    /* Menu Container */
+    .menu-container {
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      max-width: 1600px;
+      height: 90vh;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 2rem;
+    }
+
+    .menu-header {
+      text-align: center;
+    }
+
+    .menu-header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.2em;
+    }
+
+    .menu-header p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: #ccc;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .menu-section {
+      border: 1px solid #333;
+      padding: 1rem;
+      border-radius: 10px;
+      background-color: #111;
+    }
+
+    .menu-section h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #444;
+      padding-bottom: 0.5rem;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.3rem 0;
+      font-size: 1rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.1rem;
+      color: #aaa;
+      border-top: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Layer -->
+  <div class="scribble-layer" id="scribble-layer"></div>
+
+  <!-- Menu Layer -->
+  <div class="menu-container">
+    <div class="menu-header">
+      <h1>Elite Trio Cafe</h1>
+      <p>Open Daily 10 AM - 10 PM</p>
+    </div>
+
+    <div class="menu-grid">
+      <!-- Espresso Section -->
+      <div class="menu-section">
+        <h2>Espresso</h2>
+        <div class="menu-item"><span>Americano</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Cappuccino</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Latte</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Double Espresso</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Macchiato</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Mochaccino</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Long Black</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Flat White</span><span>$4.00</span></div>
+      </div>
+
+      <!-- Non-Coffee Section -->
+      <div class="menu-section">
+        <h2>Non-Coffee</h2>
+        <div class="menu-item"><span>Caramel</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Coffee Jelly</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Hazelnut Mocha</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Matcha Cream</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Strawberry Cream</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Vanilla Bean</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Milkshake</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Milk Tea</span><span>$4.00</span></div>
+      </div>
+
+      <!-- Tea Section -->
+      <div class="menu-section">
+        <h2>Tea</h2>
+        <div class="menu-item"><span>Hot Tea</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Ice Tea</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Lemon Tea</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Green Tea</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Jasmine Tea</span><span>$4.00</span></div>
+      </div>
+
+      <!-- Desserts Section -->
+      <div class="menu-section">
+        <h2>Desserts</h2>
+        <div class="menu-item"><span>Strawberry Waffle</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Cinnamon Roll</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Lemon Pie</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Croissant</span><span>$4.00</span></div>
+        <div class="menu-item"><span>Chocolate Waffle</span><span>$4.00</span></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      © 2025 Elite Trio Cafe • All rights reserved
+    </div>
+  </div>
+
+  <script>
+    const scribbleContainer = document.getElementById('scribble-layer');
+    const numLines = 120; // slightly more lines
+
+    for (let i = 0; i < numLines; i++) {
+      const line = document.createElement('div');
+      line.classList.add('scribble-line');
+
+      const width = Math.random() * 150 + 30;  // 30–180px
+      const height = Math.random() * 3 + 2;    // 2–5px
+      const top = Math.random() * 100;
+      const left = Math.random() * 100;
+      const rotation = Math.random() * 360;
+
+      line.style.width = `${width}px`;
+      line.style.height = `${height}px`;
+      line.style.top = `${top}%`;
+      line.style.left = `${left}%`;
+      line.style.transform = `rotate(${rotation}deg)`;
+      line.style.opacity = Math.random() * 0.1 + 0.05; // More visible
+
+      scribbleContainer.appendChild(line);
+    }
+  </script>
+</body>
+</html>
