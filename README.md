@@ -17,15 +17,6 @@
       color: white;
       padding: 60px 20px 80px;
     }
-        }
-
-    .scribble-line {
-      position: absolute;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 0 6px 2px white;
-      opacity: 0.1; /* More visible */
-    }
 
     .menu-wrapper {
       max-width: 1200px;
