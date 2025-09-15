@@ -179,7 +179,7 @@
         <div class="menu-grid">
 
           <div class="menu-column">
-            <h3>Burgers</h3>
+            <h3>  Burgers</h3>
             <div class="menu-item"><div>Classic Cheeseburger</div><span>$5.99</span></div>
             <div class="menu-item"><div>Chicken Burger</div><span>$5.49</span></div>
             <div class="menu-item"><div>Veggie Burger</div><span>$4.99</span></div>
@@ -187,7 +187,7 @@
           </div>
 
           <div class="menu-column">
-            <center><h3>Fries & Sides</h3></center>
+            <center><h3>  Fries & Sides</h3></center>
             <div class="menu-item"><div>French Fries</div><span>$2.99</span></div>
             <div class="menu-item"><div>Onion Rings</div><span>$3.49</span></div>
             <div class="menu-item"><div>Cheese Fries</div><span>$3.99</span></div>
@@ -195,14 +195,14 @@
           </div>
 
           <div class="menu-column">
-            <h3>Wraps</h3>
+            <h3>  Wraps</h3>
             <div class="menu-item"><div>Grilled Chicken Wrap</div><span>$5.49</span></div>
             <div class="menu-item"><div>Beef Wrap</div><span>$5.99</span></div>
             <div class="menu-item"><div>Falafel Wrap</div><span>$4.99</span></div>
           </div>
 
           <div class="menu-column">
-            <h3>Desserts</h3>
+            <h3>  Desserts</h3>
             <div class="menu-item"><div>Strawberry Waffle</div><span>$4.00</span></div>
             <div class="menu-item"><div>Cinnamon Roll</div><span>$4.00</span></div>
             <div class="menu-item"><div>Lemon Pie</div><span>$4.00</span></div>
@@ -217,7 +217,7 @@
         <div class="menu-grid">
 
           <div class="menu-column">
-            <h3>Espresso</h3>
+            <h3>  Espresso</h3>
             <div class="menu-item"><div>Americano</div><span>$4.00</span></div>
             <div class="menu-item"><div>Cappuccino</div><span>$4.00</span></div>
             <div class="menu-item"><div>Latte</div><span>$4.00</span></div>
@@ -229,7 +229,7 @@
           </div>
 
           <div class="menu-column">
-            <h3>Non-Coffee</h3>
+            <h3>  Non-Coffee</h3>
             <div class="menu-item"><div>Caramel</div><span>$4.00</span></div>
             <div class="menu-item"><div>Coffee Jelly</div><span>$4.00</span></div>
             <div class="menu-item"><div>Hazelnut Mocha</div><span>$4.00</span></div>
@@ -241,7 +241,7 @@
           </div>
 
           <div class="menu-column">
-            <h3>Tea</h3>
+            <h3>  Tea</h3>
             <div class="menu-item"><div>Hot Tea</div><span>$4.00</span></div>
             <div class="menu-item"><div>Ice Tea</div><span>$4.00</span></div>
             <div class="menu-item"><div>Lemon Tea</div><span>$4.00</span></div>
@@ -250,7 +250,7 @@
           </div>
 
           <div class="menu-column">
-            <h3>Smoothies</h3>
+            <h3>  Smoothies</h3>
             <div class="menu-item"><div>Strawberry Smoothie</div><span>$5.00</span></div>
             <div class="menu-item"><div>Mango Smoothie</div><span>$5.00</span></div>
             <div class="menu-item"><div>Banana Smoothie</div><span>$5.00</span></div>
