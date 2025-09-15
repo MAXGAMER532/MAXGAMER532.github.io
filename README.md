@@ -187,7 +187,7 @@
           </div>
 
           <div class="menu-column">
-            <h3>Fries & Sides</h3>
+            <center><h3>Fries & Sides</h3></center>
             <div class="menu-item"><div>French Fries</div><span>$2.99</span></div>
             <div class="menu-item"><div>Onion Rings</div><span>$3.49</span></div>
             <div class="menu-item"><div>Cheese Fries</div><span>$3.99</span></div>
