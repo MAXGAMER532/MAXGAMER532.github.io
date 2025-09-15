@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,8 +15,14 @@
       background-color: #111;
       color: white;
       padding: 60px 20px 80px;
+      /* Background Effect */
+      background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0), radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+      /* Subtle dark overlay for better contrast */
+      background-color: #111;
     }
-
+    
     .menu-wrapper {
       max-width: 1200px;
       margin: 0 auto;
@@ -137,7 +142,6 @@
     <h1>Elite Trio Cafe</h1>
     <p class="hours">Open Daily 10 AM – 10 PM</p>
 
-    <!-- Tabs -->
     <input type="radio" name="tab" id="food-tab" checked>
     <label for="food-tab"></label>
 
@@ -149,10 +153,8 @@
       <label for="drinks-tab">Drinks</label>
     </div>
 
-    <!-- Content Area -->
     <div class="content-wrapper">
 
-      <!-- FOOD TAB -->
       <div class="tab-content" id="food-content">
         <div class="menu-grid">
 
@@ -191,7 +193,6 @@
         </div>
       </div>
 
-      <!-- DRINKS TAB -->
       <div class="tab-content" id="drinks-content">
         <div class="menu-grid">
 
@@ -245,4 +246,3 @@
       © 2025 Elite Trio Cafe • All rights reserved
     </footer>
   </div>
-
