@@ -78,13 +78,12 @@
       display: block;
     }
 
-    /* Menu Grid */
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 30px;
-      margin-bottom: 60px;
-    }
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* always 4 equal columns */
+  gap: 30px;
+  margin-bottom: 60px;
+}
 
     .menu-column {
       background-color: #1a1a1a;
