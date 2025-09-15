@@ -22,7 +22,24 @@
       /* Subtle dark overlay for better contrast */
       background-color: #111;
     }
-    
+        /* Scribble Background Layer */
+    .scribble-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .scribble-line {
+      position: absolute;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 6px 2px white;
+      opacity: 0.1; /* More visible */
+    }
     .menu-wrapper {
       max-width: 1200px;
       margin: 0 auto;
@@ -139,13 +156,6 @@
 <body>
   <!-- Background Layer -->
   <div class="scribble-layer" id="scribble-layer"></div>
-
-  <!-- Menu Layer -->
-  <div class="menu-container">
-    <div class="menu-header">
-      <h1>Elite Trio Cafe</h1>
-      <p>Open Daily 10 AM - 10 PM</p>
-    </div>
 
   <div class="menu-wrapper">
     <h1>Elite Trio Cafe</h1>
