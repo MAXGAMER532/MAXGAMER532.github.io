@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -78,11 +79,12 @@
       display: block;
     }
 
+    /* Menu Grid */
     .menu-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* always 4 equal columns */
-    gap: 30px;
-    margin-bottom: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
     }
 
     .menu-column {
@@ -177,6 +179,15 @@
             <div class="menu-item"><div>Falafel Wrap</div><span>$4.99</span></div>
           </div>
 
+          <div class="menu-column">
+            <h3>Desserts</h3>
+            <div class="menu-item"><div>Strawberry Waffle</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Cinnamon Roll</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Lemon Pie</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Croissant</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Chocolate Waffle</div><span>$4.00</span></div>
+          </div>
+
         </div>
       </div>
 
@@ -220,14 +231,13 @@
             <div class="menu-item"><div>Jasmine Tea</div><span>$4.00</span></div>
           </div>
 
-          <!-- Desserts -->
+          <!-- Smoothies -->
           <div class="menu-column">
-            <h3>Desserts</h3>
-            <div class="menu-item"><div>Strawberry Waffle</div><span>$4.00</span></div>
-            <div class="menu-item"><div>Cinnamon Roll</div><span>$4.00</span></div>
-            <div class="menu-item"><div>Lemon Pie</div><span>$4.00</span></div>
-            <div class="menu-item"><div>Croissant</div><span>$4.00</span></div>
-            <div class="menu-item"><div>Chocolate Waffle</div><span>$4.00</span></div>
+            <h3>Smoothies</h3>
+            <div class="menu-item"><div>Strawberry Smoothie</div><span>$5.00</span></div>
+            <div class="menu-item"><div>Mango Smoothie</div><span>$5.00</span></div>
+            <div class="menu-item"><div>Banana Smoothie</div><span>$5.00</span></div>
+            <div class="menu-item"><div>Mixed Berry Smoothie</div><span>$5.00</span></div>
           </div>
 
         </div>
@@ -239,6 +249,10 @@
       © 2025 Elite Trio Cafe • All rights reserved
     </footer>
   </div>
+
+</body>
+</html>
+
 
 </body>
 </html>
