@@ -1,11 +1,10 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Elite Trio Cafe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Reset */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -79,10 +78,10 @@
       display: block;
     }
 
-    /* Menu Grid */
+    /* Menu Grid: exactly 4 columns in one row */
     .menu-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 30px;
       margin-bottom: 60px;
     }
@@ -99,6 +98,7 @@
       padding-bottom: 12px;
       margin-bottom: 20px;
       font-size: 1.25em;
+      text-align: center;
     }
 
     .menu-item {
@@ -195,7 +195,6 @@
       <div class="tab-content" id="drinks-content">
         <div class="menu-grid">
 
-          <!-- Espresso -->
           <div class="menu-column">
             <h3>Espresso</h3>
             <div class="menu-item"><div>Americano</div><span>$4.00</span></div>
@@ -208,7 +207,6 @@
             <div class="menu-item"><div>Flat White</div><span>$4.00</span></div>
           </div>
 
-          <!-- Non-Coffee -->
           <div class="menu-column">
             <h3>Non-Coffee</h3>
             <div class="menu-item"><div>Caramel</div><span>$4.00</span></div>
@@ -221,7 +219,6 @@
             <div class="menu-item"><div>Milk Tea</div><span>$4.00</span></div>
           </div>
 
-          <!-- Tea -->
           <div class="menu-column">
             <h3>Tea</h3>
             <div class="menu-item"><div>Hot Tea</div><span>$4.00</span></div>
@@ -231,7 +228,6 @@
             <div class="menu-item"><div>Jasmine Tea</div><span>$4.00</span></div>
           </div>
 
-          <!-- Smoothies -->
           <div class="menu-column">
             <h3>Smoothies</h3>
             <div class="menu-item"><div>Strawberry Smoothie</div><span>$5.00</span></div>
@@ -249,11 +245,4 @@
       © 2025 Elite Trio Cafe • All rights reserved
     </footer>
   </div>
-
-</body>
-</html>
-
-
-</body>
-</html>
 
