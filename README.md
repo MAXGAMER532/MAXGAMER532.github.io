@@ -33,7 +33,7 @@
       pointer-events: none;
     }
 
-    .scribble-line {
+     .scribble-line {
       position: absolute;
       background-color: white;
       border-radius: 10px;
@@ -155,7 +155,8 @@
 </head>
 <body>
   <!-- Background Layer -->
-  <div class="scribble-layer" id="scribble-layer"></div>
+   <div class="scribble-layer" id="scribble-layer"> 
+   </div>
 
   <div class="menu-wrapper">
     <h1>Elite Trio Cafe</h1>
@@ -258,7 +259,30 @@
 
         </div>
       </div>
+    <script>
+    const scribbleContainer = document.getElementById('scribble-layer');
+    const numLines = 120; // slightly more lines
 
+    for (let i = 0; i < numLines; i++) {
+      const line = document.createElement('div');
+      line.classList.add('scribble-line');
+
+      const width = Math.random() * 150 + 30;  // 30–180px
+      const height = Math.random() * 3 + 2;    // 2–5px
+      const top = Math.random() * 100;
+      const left = Math.random() * 100;
+      const rotation = Math.random() * 360;
+
+      line.style.width = `${width}px`;
+      line.style.height = `${height}px`;
+      line.style.top = `${top}%`;
+      line.style.left = `${left}%`;
+      line.style.transform = `rotate(${rotation}deg)`;
+      line.style.opacity = Math.random() * 0.1 + 0.05; // More visible
+
+      scribbleContainer.appendChild(line);
+    }
+    </script>
     </div>
 
     <footer>
