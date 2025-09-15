@@ -137,6 +137,15 @@
   </style>
 </head>
 <body>
+  <!-- Background Layer -->
+  <div class="scribble-layer" id="scribble-layer"></div>
+
+  <!-- Menu Layer -->
+  <div class="menu-container">
+    <div class="menu-header">
+      <h1>Elite Trio Cafe</h1>
+      <p>Open Daily 10 AM - 10 PM</p>
+    </div>
 
   <div class="menu-wrapper">
     <h1>Elite Trio Cafe</h1>
