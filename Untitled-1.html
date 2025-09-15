@@ -1,211 +1,247 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>mkam339 — مصمم مواقع</title>
-  <meta name="description" content="مصمم مواقع — حجز موعد عبر واتساب أو البريد، معرض أعمال، خدمات، خطوات العمل. من شركة السهل واللين." />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <title>Elite Trio Cafe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    html{scroll-behavior:smooth}
-    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Arabic","Noto Sans",Arial,sans-serif}
-    .btn-primary{background:linear-gradient(90deg,#2563eb,#16a34a);color:#fff}
-    .btn-dark{background:#0a0a0a;color:#fff}
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: white;
+      padding: 60px 20px 80px;
+    }
+
+    .menu-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hours {
+      color: #ccc;
+      font-size: 1.1em;
+      margin-bottom: 50px;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+      gap: 20px;
+    }
+
+    .tabs label {
+      padding: 12px 30px;
+      border: 2px solid #333;
+      border-radius: 30px;
+      cursor: pointer;
+      color: white;
+      background-color: transparent;
+      transition: background 0.3s, transform 0.3s ease;
+      font-size: 1em;
+    }
+
+    .tabs label:hover {
+      background-color: #222;
+      transform: scale(1.05);
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    input[type="radio"]:checked + label {
+      background-color: #e60000;
+      border-color: #e60000;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    #food-tab:checked ~ .content-wrapper #food-content,
+    #drinks-tab:checked ~ .content-wrapper #drinks-content {
+      display: block;
+    }
+
+    /* Menu Grid */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .menu-column {
+      background-color: #1a1a1a;
+      padding: 25px 20px;
+      border-radius: 12px;
+      text-align: left;
+    }
+
+    .menu-column h3 {
+      border-bottom: 1px solid #333;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      font-size: 1.25em;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 1em;
+      padding: 10px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .menu-item:hover {
+      background-color: #222;
+      transform: scale(1.03);
+    }
+
+    .menu-item span {
+      color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.95em;
+      color: #666;
+      border-top: 1px solid #222;
+      padding-top: 25px;
+      margin-top: 40px;
+    }
   </style>
 </head>
-<body class="bg-white text-black">
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-neutral-200 bg-white/90 backdrop-blur">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
-      <a href="#" class="flex items-center gap-3">
-        <div class="h-10 w-10 rounded-2xl border border-black/20 flex items-center justify-center font-black">mk</div>
-        <div class="leading-tight">
-          <div class="font-extrabold text-black uppercase tracking-widest">mkam339</div>
-          <div class="text-xs text-neutral-500">مصمم مواقع — شركة السهل واللين</div>
-        </div>
-      </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-        <a href="#portfolio" class="hover:text-black/70">معرض الأعمال</a>
-        <a href="#services" class="hover:text-black/70">الخدمات</a>
-        <a href="#process" class="hover:text-black/70">الخطوات</a>
-        <a href="#booking" class="hover:text-black/70">احجز</a>
-        <a href="#about" class="hover:text-black/70">عن الشركة</a>
-        <a href="#contact" class="hover:text-black/70">تواصل</a>
-      </nav>
-      <div class="flex items-center gap-2">
-        <a href="#booking" class="rounded-xl px-4 py-2 text-sm font-semibold btn-primary">احجز الآن</a>
-      </div>
-    </div>
-  </header>
+<body>
 
-  <!-- Hero -->
-  <section class="border-b border-neutral-200 bg-white">
-    <div class="mx-auto max-w-7xl px-4 py-16">
-      <div class="grid grid-cols-1 gap-10 md:grid-cols-12 items-center">
-        <div class="md:col-span-7 flex flex-col gap-6">
-          <span class="inline-block w-fit rounded-full border px-3 py-1 text-xs font-semibold text-blue-600 border-neutral-200">تصميم مواقع احترافية</span>
-          <h1 class="text-4xl md:text-6xl font-black text-black leading-[1.1]">مواقع أنيقة وسريعة — هوية واضحة وتحويلات أعلى</h1>
-          <p class="text-neutral-700 md:text-xl max-w-2xl">أنا مصمم مواقع يوصل رسالة عملك بسرعة وبساطة. ألوان أساسية: الأبيض والأسود، مع لمسات زرقاء وخضراء.</p>
-          <div class="flex flex-wrap items-center gap-4">
-            <a href="#portfolio" class="rounded-2xl border border-neutral-300 px-6 py-3 text-base font-bold hover:bg-neutral-50">أعمالي</a>
-            <a href="#booking" class="rounded-2xl px-6 py-3 text-base font-extrabold btn-primary">احجز موعدًا</a>
+  <div class="menu-wrapper">
+    <h1>Elite Trio Cafe</h1>
+    <p class="hours">Open Daily 10 AM – 10 PM</p>
+
+    <!-- Tabs -->
+    <input type="radio" name="tab" id="food-tab" checked>
+    <label for="food-tab"></label>
+
+    <input type="radio" name="tab" id="drinks-tab">
+    <label for="drinks-tab"></label>
+
+    <div class="tabs">
+      <label for="food-tab">Food</label>
+      <label for="drinks-tab">Drinks</label>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-wrapper">
+
+      <!-- FOOD TAB -->
+      <div class="tab-content" id="food-content">
+        <div class="menu-grid">
+
+          <div class="menu-column">
+            <h3>Burgers</h3>
+            <div class="menu-item"><div>Classic Cheeseburger</div><span>$5.99</span></div>
+            <div class="menu-item"><div>Chicken Burger</div><span>$5.49</span></div>
+            <div class="menu-item"><div>Veggie Burger</div><span>$4.99</span></div>
+            <div class="menu-item"><div>BBQ Bacon Burger</div><span>$6.49</span></div>
           </div>
-          <div class="flex items-center gap-3 pt-2 text-sm">
-            <span class="inline-block w-fit rounded-full border px-3 py-1 border-neutral-200">
-              من <a href="https://example.com" target="_blank" rel="noreferrer" class="underline underline-offset-4">شركة السهل واللين</a> — قسم المبرمجين
-            </span>
+
+          <div class="menu-column">
+            <h3>Fries & Sides</h3>
+            <div class="menu-item"><div>French Fries</div><span>$2.99</span></div>
+            <div class="menu-item"><div>Onion Rings</div><span>$3.49</span></div>
+            <div class="menu-item"><div>Cheese Fries</div><span>$3.99</span></div>
+            <div class="menu-item"><div>Chicken Nuggets</div><span>$4.49</span></div>
           </div>
-        </div>
-        <div class="md:col-span-5">
-          <div class="rounded-3xl border border-neutral-200 overflow-hidden">
-            <div class="bg-black text-white p-4 text-sm">عرض سريع</div>
-            <div class="p-6 bg-white">
-              <ul class="space-y-2 text-sm text-neutral-700">
-                <li>• تصميم حديث سريع الاستجابة</li>
-                <li>• تجربة مستخدم مركّزة على التحويل</li>
-                <li>• تحسين أساسي لـ SEO</li>
-                <li>• دعم وإطلاق بسيط</li>
-              </ul>
-              <a href="#booking" class="mt-4 inline-block rounded-xl px-4 py-2 text-sm font-extrabold btn-dark">ابدأ الآن</a>
-            </div>
+
+          <div class="menu-column">
+            <h3>Wraps</h3>
+            <div class="menu-item"><div>Grilled Chicken Wrap</div><span>$5.49</span></div>
+            <div class="menu-item"><div>Beef Wrap</div><span>$5.99</span></div>
+            <div class="menu-item"><div>Falafel Wrap</div><span>$4.99</span></div>
           </div>
+
         </div>
       </div>
-    </div>
-    <div class="bg-black text-white">
-      <div class="mx-auto max-w-7xl px-4 py-8 grid gap-4 md:grid-cols-3 text-sm">
-        <div>سرعة تنفيذ عالية</div>
-        <div>بساطة + وضوح</div>
-        <div>تواصل مباشر</div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Services -->
-  <section id="services" class="py-16">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2 class="text-3xl font-extrabold mb-2">الخدمات</h2>
-      <div class="grid gap-6 md:grid-cols-3">
-        <div class="rounded-2xl border p-6 shadow-sm">
-          <div class="text-lg font-extrabold mb-2">مواقع تعريفية</div>
-          <p class="text-sm text-neutral-600">صفحات هبوط ومواقع شركات مهيّأة للتحويل.</p>
-        </div>
-        <div class="rounded-2xl border p-6 shadow-sm">
-          <div class="text-lg font-extrabold mb-2">متاجر خفيفة</div>
-          <p class="text-sm text-neutral-600">كتالوج + نموذج طلب بسيط.</p>
-        </div>
-        <div class="rounded-2xl border p-6 shadow-sm">
-          <div class="text-lg font-extrabold mb-2">دعم وإطلاق</div>
-          <p class="text-sm text-neutral-600">ضبط نطاقك والاستضافة والنشر.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <!-- DRINKS TAB -->
+      <div class="tab-content" id="drinks-content">
+        <div class="menu-grid">
 
-  <!-- Process -->
-  <section id="process" class="py-16">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2 class="text-3xl font-extrabold mb-2">الخطوات</h2>
-      <div class="grid gap-6 md:grid-cols-4">
-        <div class="rounded-2xl border p-6 text-sm"><div class="font-extrabold mb-1">1) تواصل</div><div class="text-neutral-600">نقاش سريع لفهم الهدف.</div></div>
-        <div class="rounded-2xl border p-6 text-sm"><div class="font-extrabold mb-1">2) عرض</div><div class="text-neutral-600">نموذج + خطة تنفيذ.</div></div>
-        <div class="rounded-2xl border p-6 text-sm"><div class="font-extrabold mb-1">3) تنفيذ</div><div class="text-neutral-600">تصميم وتطوير سريع.</div></div>
-        <div class="rounded-2xl border p-6 text-sm"><div class="font-extrabold mb-1">4) إطلاق</div><div class="text-neutral-600">تسليم وتحسينات أخيرة.</div></div>
-      </div>
-    </div>
-  </section>
+          <!-- Espresso -->
+          <div class="menu-column">
+            <h3>Espresso</h3>
+            <div class="menu-item"><div>Americano</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Cappuccino</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Latte</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Double Espresso</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Macchiato</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Mocha</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Long Black</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Flat White</div><span>$4.00</span></div>
+          </div>
 
-  <!-- Portfolio -->
-  <section id="portfolio" class="py-16">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2 class="text-3xl font-extrabold mb-2">معرض الأعمال</h2>
-      <div class="grid gap-6 md:grid-cols-3">
-        <a href="https://mkam339.github.io/tawiq/#" class="rounded-2xl border p-6 hover:bg-neutral-50">
-          <div class="text-black font-extrabold mb-2">طويق 1</div>
-          <div class="text-sm text-neutral-600">موقع لطويق صفحة تعليمية</div>
-        </a>
-        <a href="https://mkam339.github.io/-/?#portfolio" class="rounded-2xl border p-6 hover:bg-neutral-50">
-          <div class="text-black font-extrabold mb-2">طويق 2</div>
-          <div class="text-sm text-neutral-600">  موقع لطويق التعليمة </div>
-        </a>
-        <a href="https://mkam339.github.io/Alsahl-and-layn/#web" class="rounded-2xl border p-6 hover:bg-neutral-50">
-          <div class="text-black font-extrabold mb-2"> )الشركة الراعية (السهل وواللين</div>
-          <div class="text-sm text-neutral-600">  الشركة الراعية للموقع </div>
-        </a>
-      </div>
-    </div>
-  </section>
+          <!-- Non-Coffee -->
+          <div class="menu-column">
+            <h3>Non-Coffee</h3>
+            <div class="menu-item"><div>Caramel</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Coffee Jelly</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Hazelnut Mocha</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Matcha Cream</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Strawberry Cream</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Vanilla Bean</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Milkshake</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Milk Tea</div><span>$4.00</span></div>
+          </div>
 
-  <!-- Booking -->
-  <section id="booking" class="py-16">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2 class="text-3xl font-extrabold mb-2">احجز موعدًا</h2>
-      <div class="grid gap-6 md:grid-cols-2">
-        <div class="rounded-2xl border p-6 shadow-sm">
-          <div class="mb-2 text-lg font-extrabold">حجز عبر واتساب</div>
-          <p class="text-sm text-neutral-600 mb-3">اضغط الزر وأرسل التفاصيل.</p>
-          <a class="rounded-2xl px-5 py-3 text-sm font-extrabold btn-primary inline-block" target="_blank"
-             href="https://wa.me/966534335815?text=أريد%20حجز%20موعد%20لموقع%20جديد">
-            احجز عبر واتساب
-          </a>
-        </div>
-        <div class="rounded-2xl border p-6 shadow-sm">
-          <div class="mb-2 text-lg font-extrabold">حجز عبر البريد</div>
-          <p class="text-sm text-neutral-600 mb-3">أرسل التفاصيل على البريد.</p>
-          <a class="rounded-2xl px-5 py-3 text-sm font-extrabold btn-dark inline-block"
-             href="mailto:mohamadalkasemy@gmail.com?subject=حجز%20موعد&body=الاسم%3A%0Aنوع%20المشروع%3A%0Aالموعد%20المفضل%3A%0A">
-            أرسل بريدًا الآن
-          </a>
+          <!-- Tea -->
+          <div class="menu-column">
+            <h3>Tea</h3>
+            <div class="menu-item"><div>Hot Tea</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Ice Tea</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Lemon Tea</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Green Tea</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Jasmine Tea</div><span>$4.00</span></div>
+          </div>
+
+          <!-- Desserts -->
+          <div class="menu-column">
+            <h3>Desserts</h3>
+            <div class="menu-item"><div>Strawberry Waffle</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Cinnamon Roll</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Lemon Pie</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Croissant</div><span>$4.00</span></div>
+            <div class="menu-item"><div>Chocolate Waffle</div><span>$4.00</span></div>
+          </div>
+
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- About -->
-  <section id="about" class="py-16">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2 class="text-3xl font-extrabold mb-2">عن شركة السهل واللين</h2>
-      <p class="text-sm text-neutral-700 max-w-3xl">
-        شركة تعمل في اللوحات الإرشادية وبها قسم للمبرمجين وأنا أحد أعضائه. هذا الموقع مخصّص لخدمة تصميم مواقع الشركات والمتاجر الخفيفة.
-      </p>
-      <a href="https://mkam339.github.io/Alsahl-and-layn/#web" target="_blank" class="mt-4 inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-extrabold btn-dark">
-        موقع الشركة
-      </a>
     </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="py-16">
-    <div class="mx-auto max-w-7xl px-4">
-      <h2 class="text-3xl font-extrabold mb-2">تواصل</h2>
-      <div class="grid gap-6 md:grid-cols-2">
-        <div class="rounded-2xl border p-6 shadow-sm">
-          <div class="text-sm">البريد: <a class="underline" href="mailto:contact@mkam339.dev">mohamadalkasemy@gmail.com</a></div>
-          <div class="text-sm">الواتساب: <a class="underline" target="_blank" href="https://wa.me/966534335815">+966 534335815</a></div>
-        </div>
-        <div class="rounded-2xl border p-6 shadow-sm">
-          <div class="text-sm">ألوان الهوية: أبيض / أسود — أزرق (#2563eb) — أخضر (#16a34a)</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <footer>
+      © 2025 Elite Trio Cafe • All rights reserved
+    </footer>
+  </div>
 
-  <footer class="bg-black text-white mt-12">
-    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-10 md:flex-row">
-      <div class="text-xs opacity-80">© <span id="year"></span> mkam339. جميع الحقوق محفوظة.</div>
-      <div class="flex items-center gap-4 text-xs">
-        <a href="#portfolio" class="hover:underline">أعمالي</a>
-        <a href="#services" class="hover:underline">الخدمات</a>
-        <a href="#process" class="hover:underline">الخطوات</a>
-        <a href="#booking" class="hover:underline">احجز</a>
-        <a href="#about" class="hover:underline">عن الشركة</a>
-        <a href="#contact" class="hover:underline">تواصل</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
 
-</html>
