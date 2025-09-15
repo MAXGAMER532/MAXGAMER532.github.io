@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عداد تسبيح إسلامي</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #b78a28;
+            --light-color: #f8f9fa;
+            --dark-color: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: var(--light-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9c099077-6d08-4b40-a0ce-8711fb1b96ef.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .container {
+            background-color: rgba(26, 26, 26, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            border: 1px solid var(--secondary-color);
+        }
+
+        .header {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .counter-display {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: var(--light-color);
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--secondary-color);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(183, 138, 40, 0.4);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        .reset-btn {
+            background-color: transparent;
+            color: var(--light-color);
+            border: 1px solid var(--secondary-color);
+        }
+
+        .tasbeeh-text {
+            margin-top: 30px;
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .info-text {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-style: italic;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 600px) {
+            .buttons {
+                flex-direction: column;
+            }
+            
+            .counter-display {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e83c69ae-b858-43e5-b26f-51f73bd2f84b.png" alt="Islamic calligraphy of the Arabic letter Meem in gold color with elegant decorative elements">
+            <h1>عداد تسبيح</h1>
+        </div>
+        
+        <div class="counter-display" id="counter">0</div>
+        
+        <div class="tasbeeh-text">سبحان الله • الحمد لله • الله أكبر</div>
+        
+        <div class="buttons">
+            <button id="count-btn">اذكر الله</button>
+            <button id="reset-btn" class="reset-btn">إعادة</button>
+        </div>
+        
+        <p class="info-text">ترحموا علي الحاج ابراهيم خليل والحاج يوسف ابراهيم</p>
+        
+        <footer>Developer Mohamad Magdy Alkasemy</footer>
+    </div>
+
+    <script>
+        let count = 0;
+        const counterDisplay = document.getElementById('counter');
+        const countBtn = document.getElementById('count-btn');
+        const resetBtn = document.getElementById('reset-btn');
+
+        // Count button functionality
+        countBtn.addEventListener('click', () => {
+            count++;
+            counterDisplay.textContent = count;
+            
+            // Add visual feedback
+            counterDisplay.style.transform = 'scale(1.1)';
+            setTimeout(() => {
+                counterDisplay.style.transform = 'scale(1)';
+            }, 150);
+        });
+
+        // Reset button functionality
+        resetBtn.addEventListener('click', () => {
+            count = 0;
+            counterDisplay.textContent = count;
+            
+            // Add visual feedback
+            counterDisplay.style.backgroundColor = 'rgba(183, 38, 38, 0.3)';
+            setTimeout(() => {
+                counterDisplay.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+            }, 500);
+        });
+
+        // Keyboard support
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                countBtn.click();
+            } else if (e.code === 'Escape') {
+                resetBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>
