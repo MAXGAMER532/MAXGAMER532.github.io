@@ -3,6 +3,13 @@
   <meta charset="UTF-8">
   <title>The Elite Trio Resturant & Cafe</title>
 <style>
+  header a[href*="github.com"] {
+  display: none !important;
+}
+#forkme_banner {
+  display: none !important;
+}
+
 * {
   margin: 0;
   padding: 0;
