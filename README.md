@@ -1,5 +1,3 @@
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -263,10 +261,6 @@ header h2 {
       scribbleContainer.appendChild(line);
     }
     </script> 
-    
-
-</body>
-</html>
       © 2025 Elite Trio Cafe • All rights reserved
     </footer>
   </div>
