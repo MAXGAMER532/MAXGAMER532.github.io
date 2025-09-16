@@ -1,0 +1,39 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.confirmation-card {
+    background-color: #111;
+    padding: 30px 40px;
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    max-width: 400px;
+}
+
+.confirmation-card h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    background-color: #3c0404;
+
+}
+
+
+.confirmation-card p {
+    font-size: 16px;
+    color: #ccc;
+}
