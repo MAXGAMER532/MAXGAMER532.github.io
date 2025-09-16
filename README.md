@@ -204,7 +204,8 @@ header h2 {
         <h3>Book Your Table</h3>
       </div>
     </a>
-  </header>
+
+    
 <section class="section">
     <p>
       The Elite Trio , founded in 2025, is dedicated to all those who love to wander far and wide. 
@@ -261,5 +262,4 @@ header h2 {
     }
     </script> 
       © 2025 Elite Trio Cafe • All rights reserved
-    </footer>
   </div>
