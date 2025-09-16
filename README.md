@@ -204,7 +204,6 @@ header h2 {
         <h3>Book Your Table</h3>
       </div>
     </a>
-    </div>
   </header>
 <section class="section">
     <p>
@@ -236,7 +235,7 @@ header h2 {
             <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
         </a>
         
-    </center> </div>  
+    </center>  
     <script>
     const scribbleContainer = document.getElementById('scribble-layer');
     const numLines = 120; // slightly more lines
