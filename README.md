@@ -194,7 +194,7 @@ header h2 {
    </div>
 
   <header>
-    <h2>Enjoy An Unforgettable Experience</h2>
+    <h2> Enjoy An Unforgettable Experience</h2>
     <h1>The Elite Trio Resturant & Cafe</h1>
 <br><br><br><br>
     <div class="cards-container">
