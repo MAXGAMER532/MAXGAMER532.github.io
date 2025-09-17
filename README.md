@@ -197,7 +197,7 @@ header h2 {
         </div>
       </a>
 
-      <a href="booking.html" target="_self" class="card">
+      <a href="Booking.html" target="_self" class="card">
         <img src="book.jpg" alt="Booking">
         <div class="overlay">
           <h3>Book Your Table</h3>
