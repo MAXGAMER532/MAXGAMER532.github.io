@@ -140,12 +140,7 @@ select:hover {
   <div class="booking-container">
     <h1>Reserve Your Table</h1>
     <form action="Submit.html" method="GET">
-      <label for="reserve">Do you want to reserve your table?</label>
-      <select id="reserve" name="reserve" required>
-        <option value="">-- Select an option --</option>
-        <option value="yes">Yes, please</option>
-        <option value="no">No, maybe later</option>
-      </select>
+
       <div class="scribble-layer" id="scribble-layer"></div>
           <script>
     const scribbleContainer = document.getElementById('scribble-layer');
@@ -172,10 +167,10 @@ select:hover {
     }
     </script>
 
-      <label for="time">What time do you want to reserve?</label>
+      <label for="time">When Will You Come?</label>
       <input type="text" id="time" name="time" placeholder="e.g. 7:00 PM" required>
 
-      <label for="spot">At what spot?</label>
+      <label for="spot">What Is Your Desired Spot?</label>
       <input type="text" id="spot" name="spot" placeholder="Enter your preferred spot" required>
 
       <div class="btn-container">
@@ -185,4 +180,5 @@ select:hover {
   </div>
 </body>
 </html>
+
 
