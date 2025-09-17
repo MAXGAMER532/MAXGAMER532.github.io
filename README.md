@@ -206,7 +206,6 @@ header h2 {
           <h3>Our Main Menu</h3>
         </div>
       </a>
-
       <a href="booking.html" target="_self" class="card">
         <img src="book.jpg" alt="Booking">
         <div class="overlay">
