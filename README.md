@@ -180,7 +180,7 @@ header h2 {
 }
 
 .social-icons a:hover img {
-  transform: scale(1.15);
+  transform: scale(1.30);
 }
 
 @media (max-width: 768px) {
