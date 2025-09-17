@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Your Table | The Elite Trio</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  text-transform: none;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+    .scribble-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+     .scribble-line {
+      position: absolute;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 6px 2px white;
+      opacity: 0.1; /* More visible */
+    }
+
+.booking-container {
+  background: rgba(20, 20, 20, 0.95);
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 400px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+  text-align: center;
+}
+
+.booking-container h1 {
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  font-style: italic;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+
+label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+
+/* Modern input + select styling */
+input,
+select {
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 10px;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  cursor: pointer;
+}
+
+input:focus,
+select:focus {
+  border-color: #fff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+/* Hover glow animation */
+input:hover,
+select:hover {
+  border-color: #888;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Button */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.submit-btn {
+  border: 1px solid white;
+  padding: 12px 24px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
+  border-radius: 30px;
+}
+
+.submit-btn:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255,255,255,0.6);
+}
+
+@media (max-width: 500px) {
+  .booking-container {
+    width: 90%;
+    padding: 25px;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="booking-container">
+    <h1>Reserve Your Table</h1>
+    <form action="submit.html" method="GET">
+      <label for="reserve">Do you want to reserve your table?</label>
+      <select id="reserve" name="reserve" required>
+        <option value="">-- Select an option --</option>
+        <option value="yes">Yes, please</option>
+        <option value="no">No, maybe later</option>
+      </select>
+      <div class="scribble-layer" id="scribble-layer"></div>
+          <script>
+    const scribbleContainer = document.getElementById('scribble-layer');
+    const numLines = 120; // slightly more lines
+
+    for (let i = 0; i < numLines; i++) {
+      const line = document.createElement('div');
+      line.classList.add('scribble-line');
+
+      const width = Math.random() * 150 + 30;  // 30–180px
+      const height = Math.random() * 3 + 2;    // 2–5px
+      const top = Math.random() * 100;
+      const left = Math.random() * 100;
+      const rotation = Math.random() * 360;
+
+      line.style.width = `${width}px`;
+      line.style.height = `${height}px`;
+      line.style.top = `${top}%`;
+      line.style.left = `${left}%`;
+      line.style.transform = `rotate(${rotation}deg)`;
+      line.style.opacity = Math.random() * 0.1 + 0.05; // More visible
+
+      scribbleContainer.appendChild(line);
+    }
+    </script>
+
+      <label for="time">What time do you want to reserve?</label>
+      <input type="text" id="time" name="time" placeholder="e.g. 7:00 PM" required>
+
+      <label for="spot">At what spot?</label>
+      <input type="text" id="spot" name="spot" placeholder="Enter your preferred spot" required>
+
+      <div class="btn-container">
+        <button type="submit" class="submit-btn">Submit Request</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

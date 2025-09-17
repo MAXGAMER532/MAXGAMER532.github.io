@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Submitted | The Elite Trio</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #0d0d0d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+    .scribble-layer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+     .scribble-line {
+      position: absolute;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 6px 2px white;
+      opacity: 0.1; /* More visible */
+    }
+
+.confirmation-card {
+  background: rgba(20, 20, 20, 0.95);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+  max-width: 420px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.confirmation-card h1 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-style: italic;
+  letter-spacing: 2px;
+  color: #fff;
+  animation: glowPulse 2s infinite;
+}
+
+.confirmation-card p {
+  font-size: 16px;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* Glow animation for header */
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
+  50% { text-shadow: 0 0 15px #fff, 0 0 25px #888; }
+  100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Back button */
+.back-btn {
+  display: inline-block;
+  margin-top: 25px;
+  border: 1px solid white;
+  padding: 12px 24px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  font-style: italic;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  background: white;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255,255,255,0.6);
+}
+  </style>
+</head>
+<body>
+  
+  <div class="confirmation-card">
+    <h1>Your Request Has Been Submitted</h1>
+    <p>Thank you for choosing The Elite Trio!</p>
+    <a href="homepage.html" class="back-btn">Back to Home</a>
+
+  </div>
+  <div class="scribble-layer" id="scribble-layer"> 
+  <script>
+    const scribbleContainer = document.getElementById('scribble-layer');
+    const numLines = 120; // slightly more lines
+
+    for (let i = 0; i < numLines; i++) {
+      const line = document.createElement('div');
+      line.classList.add('scribble-line');
+
+      const width = Math.random() * 150 + 30;  // 30–180px
+      const height = Math.random() * 3 + 2;    // 2–5px
+      const top = Math.random() * 100;
+      const left = Math.random() * 100;
+      const rotation = Math.random() * 360;
+
+      line.style.width = `${width}px`;
+      line.style.height = `${height}px`;
+      line.style.top = `${top}%`;
+      line.style.left = `${left}%`;
+      line.style.transform = `rotate(${rotation}deg)`;
+      line.style.opacity = Math.random() * 0.1 + 0.05; // More visible
+
+      scribbleContainer.appendChild(line);
+    }
+    </script>
+</body>
+</html>
