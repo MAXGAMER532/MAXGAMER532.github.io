@@ -16,7 +16,16 @@ body {
   color: #fff;
   line-height: 1.6;
   text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  word-wrap: break-word;
 }
+.menu {
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+}
+
 
 header {
   padding: 40px 20px;
@@ -184,6 +193,7 @@ header h2 {
 </head>
 <body>
    <div class="scribble-layer" id="scribble-layer"></div>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <header>
     <h2>Enjoy An Unforgettable Experience</h2>
