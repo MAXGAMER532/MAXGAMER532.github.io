@@ -1,20 +1,15 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>The Elite Trio Resturant & Cafe</title>
-<style>
-  header a[href*="github.com"] {
-  display: none !important;
-}
-#forkme_banner {
-  display: none !important;
-}
-
+  <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
+  text-transform: none; /* prevent forced all caps */
 }
 
 body {
@@ -24,7 +19,6 @@ body {
   text-align: center;
 }
 
-/* Header (Hero Section) */
 header {
   padding: 40px 20px;
   background: url('https://images.unsplash.com/photo-1606788075761-5bdf23c1d730?auto=format&fit=crop&w=1350&q=80') 
@@ -54,7 +48,6 @@ header h2 {
   margin-top: 20px;
 }
 
-/* Buttons */
 .btn {
   border: 1px solid white;
   padding: 12px 24px;
@@ -73,28 +66,25 @@ header h2 {
   color: black;
 }
 
-    .scribble-layer {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
+.scribble-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
 
-     .scribble-line {
-      position: absolute;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 0 6px 2px white;
-      opacity: 0.1; /* More visible */
-    }
-
-
+.scribble-line {
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 6px 2px white;
+  opacity: 0.1;
+}
 
 .cards-container {
-  
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
@@ -149,111 +139,112 @@ header h2 {
   color: #fff;
 }
 
-
-
-.section{
+.section {
   margin-top: 75px;
 }
-.MENU{
+
+.MENU {
   margin-top: 70px;
   margin: auto;
 }
 
 .social-icons {
-    margin-top: 40px;
-    display: flex;
-    justify-content: flex-start;
-    gap: 15px;
-    padding-left: 20px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center; /* center icons horizontally */
+  align-items: center;
+  gap: 15px;
+  width: 100%;
 }
 
 .social-icons a {
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    transition: transform 0.3s ease, filter 0.3s ease;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
-
 
 .social-icons img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: filter 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease;
 }
-
 
 .social-icons a:hover img {
-    transform: scale(1.15);
+  transform: scale(1.15);
 }
-</style>
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    height: 400px;
+  }
+}
+  </style>
 </head>
 <body>
-
-   <div class="scribble-layer" id="scribble-layer"> 
-   </div>
+   <div class="scribble-layer" id="scribble-layer"></div>
 
   <header>
-    <h2> Enjoy An Unforgettable Experience</h2>
+    <h2>Enjoy An Unforgettable Experience</h2>
     <h1>The Elite Trio Resturant & Cafe</h1>
-<br><br><br><br>
+    <br><br><br><br>
     <div class="cards-container">
-    <a href="menu.html" target="_self" class="card">
-      <img src="menu.jpg" alt="Broast delight">
-      <div class="overlay">
-        <h3>Our Main Menu</h3>
-      </div>
-    </a>
+      <a href="menu.html" target="_self" class="card">
+        <img src="menu.jpg" alt="Menu">
+        <div class="overlay">
+          <h3>Our Main Menu</h3>
+        </div>
+      </a>
 
-    <a href="booking.html" target="_self" class="card">
-      <img src="book.jpg" alt="Broast delight">
-      <div class="overlay">
-        <h3>Book Your Table</h3>
-      </div>
-    </a>
+      <a href="booking.html" target="_self" class="card">
+        <img src="book.jpg" alt="Booking">
+        <div class="overlay">
+          <h3>Book Your Table</h3>
+        </div>
+      </a>
+    </div>
+  </header>
 
-    
-<section class="section">
+  <section class="section">
     <p>
-      The Elite Trio , founded in 2025, is dedicated to all those who love to wander far and wide. 
+      The Elite Trio, founded in 2025, is dedicated to all those who love to wander far and wide. 
       We invite you on a wholesome culinary adventure, where you’ll explore undiscovered gourmet experiences.
     </p>
     <p>
       Thank you for creating lasting memories with us.
     </p>
     <p>
-       for more information visit our social media accounts if u have any problem please contact us
-        through them
+      For more information visit our social media accounts. If you have any problems please contact us through them.
     </p>
+  </section>
 
-</section>
-     
-   <!-- Social Media Icons -->
-    <div class="social-icons"><center>
-        <a href="https://facebook.com" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-        </a>
-        <a href="https://instagram.com" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
-        </a>
-        <a href="https://twitter.com" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
-        </a>
-        <a href="https://wa.me/123456789" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-        </a>
-        
-    </center>  
-    <script>
+  <div class="social-icons">
+    <a href="https://facebook.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+    <a href="https://instagram.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+    </a>
+    <a href="https://twitter.com" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+    </a>
+    <a href="https://wa.me/123456789" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+    </a>
+  </div>  
+
+  <script>
     const scribbleContainer = document.getElementById('scribble-layer');
-    const numLines = 120; // slightly more lines
+    const numLines = 120; 
 
     for (let i = 0; i < numLines; i++) {
       const line = document.createElement('div');
       line.classList.add('scribble-line');
 
-      const width = Math.random() * 150 + 30;  // 30–180px
-      const height = Math.random() * 3 + 2;    // 2–5px
+      const width = Math.random() * 150 + 30;
+      const height = Math.random() * 3 + 2;
       const top = Math.random() * 100;
       const left = Math.random() * 100;
       const rotation = Math.random() * 360;
@@ -263,10 +254,11 @@ header h2 {
       line.style.top = `${top}%`;
       line.style.left = `${left}%`;
       line.style.transform = `rotate(${rotation}deg)`;
-      line.style.opacity = Math.random() * 0.1 + 0.05; // More visible
+      line.style.opacity = Math.random() * 0.1 + 0.05;
 
       scribbleContainer.appendChild(line);
     }
-    </script> 
-      © 2025 Elite Trio Cafe • All rights reserved
-  </div>
+  </script> 
+</body>
+</html>
+
