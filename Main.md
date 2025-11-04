@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>The Elite Trio Resturant & Cafe</title>
+  <title>Fashkala Resturant & Cafe</title>
   <style>
 * {
   margin: 0;
@@ -197,7 +197,7 @@ header h2 {
 
   <header>
     <h2>Enjoy An Unforgettable Experience</h2>
-    <h1>The Elite Trio Resturant & Cafe</h1>
+    <h1>Fashkala Resturant & Cafe</h1>
     <br><br><br><br>
     <div class="cards-container">
       <a href="menu.html" target="_self" class="card">
