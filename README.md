@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,16 +17,7 @@ body {
   color: #fff;
   line-height: 1.6;
   text-align: center;
-  font-size: 1rem;
-  line-height: 1.6;
-  word-wrap: break-word;
 }
-.menu {
-  width: 90%;
-  max-width: 900px;
-  margin: auto;
-}
-
 
 header {
   padding: 40px 20px;
@@ -180,13 +172,12 @@ header h2 {
 }
 
 .slogan {
-color: white;
-font-style: italic;
-font-size: 1.2rem;
+  font-style: italic;
+  color: #ddd;
+  margin-top: 10px;
 }
-
 .social-icons a:hover img {
-  transform: scale(1.30);
+  transform: scale(1.15);
 }
 
 @media (max-width: 768px) {
@@ -199,13 +190,13 @@ font-size: 1.2rem;
 </head>
 <body>
    <div class="scribble-layer" id="scribble-layer"></div>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <header>
+    <br><br>
     <h2>Enjoy An Unforgettable Experience</h2>
     <h1>Fashkala Resturant & Cafe</h1>
     <br>
-    <h3 class="slogan">"we dont just sell food... , we sell a delightful experience where every bite meets happiness and every sip meets a smile"<h3>
+    <h4 class="slogan">"we dont just sell food... , we sell a delightful experience where every bite meets happiness and every sip meets a smile"</h4>
     <br><br><br><br>
     <div class="cards-container">
       <a href="menu.html" target="_self" class="card">
@@ -214,6 +205,7 @@ font-size: 1.2rem;
           <h3>Our Main Menu</h3>
         </div>
       </a>
+
       <a href="booking.html" target="_self" class="card">
         <img src="book.jpg" alt="Booking">
         <div class="overlay">
@@ -249,7 +241,8 @@ font-size: 1.2rem;
     <a href="https://wa.me/123456789" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     </a>
-  </div>  
+  </div> 
+  <br> 
 
   <script>
     const scribbleContainer = document.getElementById('scribble-layer');
