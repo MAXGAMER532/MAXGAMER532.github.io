@@ -179,6 +179,12 @@ header h2 {
   transition: filter 0.3s ease;
 }
 
+.slogan {
+color: white;
+font-style: italic;
+font-size: 1.2rem;
+}
+
 .social-icons a:hover img {
   transform: scale(1.30);
 }
@@ -198,6 +204,8 @@ header h2 {
   <header>
     <h2>Enjoy An Unforgettable Experience</h2>
     <h1>Fashkala Resturant & Cafe</h1>
+    <br>
+    <h3 class="slogan">"we dont just sell food... , we sell a delightful experience where every bite meets happiness and every sip meets a smile"<h3>
     <br><br><br><br>
     <div class="cards-container">
       <a href="menu.html" target="_self" class="card">
@@ -217,7 +225,7 @@ header h2 {
 
   <section class="section">
     <p>
-      The Elite Trio, founded in 2025, is dedicated to all those who love to wander far and wide. 
+      Fashkala, founded in 2025, is dedicated to all those who love to wander far and wide. 
       We invite you on a wholesome culinary adventure, where you’ll explore undiscovered gourmet experiences.
     </p>
     <p>
