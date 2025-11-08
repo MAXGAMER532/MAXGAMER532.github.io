@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fashkala Resturant & Cafe</title>
+  <title>BBD (Big Bite Dinner) Resturant & Cafe</title>
   <style>
 * {
   margin: 0;
@@ -222,7 +222,7 @@ color: white;
 
   <section class="section">
     <p>
-      Fashkala, founded in 2025, is dedicated to all those who love to wander far and wide. 
+     BBD, founded in 2025, is dedicated to all those who love to wander far and wide. 
       We invite you on a wholesome culinary adventure, where you’ll explore undiscovered gourmet experiences.
     </p>
     <p>
