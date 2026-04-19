@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRUDS — Product Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ── SVG ICON SPRITE ─────────────────────────────────────────── -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="ic-plus"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="ic-save"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></symbol>
+  <symbol id="ic-edit"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></symbol>
+  <symbol id="ic-trash"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></symbol>
+  <symbol id="ic-copy"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+  <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+  <symbol id="ic-upload"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></symbol>
+  <symbol id="ic-search"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="ic-x"        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="ic-check"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="ic-undo"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.15"/></symbol>
+  <symbol id="ic-sun"      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+  <symbol id="ic-moon"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="ic-filter"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></symbol>
+  <symbol id="ic-sort"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></symbol>
+  <symbol id="ic-tag"      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></symbol>
+  <symbol id="ic-info"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+  <symbol id="ic-chart"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></symbol>
+  <symbol id="ic-percent"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></symbol>
+  <symbol id="ic-dollar"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></symbol>
+  <symbol id="ic-alert"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="ic-eye"      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
+</svg>
+
+<div class="bg-grid"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="scanlines"></div>
+<div id="toastContainer"></div>
+
+<button class="theme-toggle" id="themeToggle" title="Toggle theme">
+  <svg class="icon icon-sun"><use href="#ic-sun"/></svg>
+  <svg class="icon icon-moon"><use href="#ic-moon"/></svg>
+</button>
+
+<!-- CONFIRM MODAL -->
+<div id="modalOverlay" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-icon-wrap"><svg class="icon" style="width:2rem;height:2rem"><use href="#ic-alert"/></svg></div>
+    <div class="modal-title" id="modalTitle">Confirm</div>
+    <div class="modal-msg"   id="modalMsg">Are you sure?</div>
+    <div class="modal-btns">
+      <button class="modal-cancel"  id="modalCancel">Cancel</button>
+      <button class="modal-confirm" id="modalConfirm">Delete</button>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div id="detailOverlay" class="modal-overlay">
+  <div class="modal detail-modal">
+    <div class="detail-header">
+      <span class="cat-badge" id="detailCat">—</span>
+      <button class="icon-btn" onclick="closeDetail()"><svg class="icon"><use href="#ic-x"/></svg></button>
+    </div>
+    <div class="detail-name" id="detailName">—</div>
+    <div class="detail-grid" id="detailGrid"></div>
+    <div class="modal-btns" style="margin-top:1.25rem">
+      <button class="modal-cancel" onclick="closeDetail()">Close</button>
+      <button class="modal-confirm" id="detailEditBtn" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);color:#fff">
+        <svg class="icon"><use href="#ic-edit"/></svg> Edit Product
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="crud">
+
+  <header class="head">
+    <div class="head-eyebrow"><span class="dot"></span> SYSTEM ONLINE</div>
+    <h1 class="head-title">CRUDS</h1>
+    <p class="head-sub">Product Management Terminal</p>
+  </header>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <svg class="stat-icon"><use href="#ic-chart"/></svg>
+      <div><span class="stat-num" id="statProductsNum">0</span><span class="stat-label">Products</span></div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-card">
+      <svg class="stat-icon"><use href="#ic-tag"/></svg>
+      <div><span class="stat-num" id="statCatNum">0</span><span class="stat-label">Categories</span></div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-card">
+      <svg class="stat-icon"><use href="#ic-dollar"/></svg>
+      <div><span class="stat-num" id="statValueNum">$0.00</span><span class="stat-label">Total Value</span></div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-card">
+      <svg class="stat-icon"><use href="#ic-info"/></svg>
+      <div><span class="stat-num" id="statAvgNum">$0.00</span><span class="stat-label">Avg Price</span></div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-card">
+      <svg class="stat-icon"><use href="#ic-sort"/></svg>
+      <div><span class="stat-num" id="statMaxNum">$0.00</span><span class="stat-label">Highest</span></div>
+    </div>
+  </div>
+
+  <!-- INPUT PANEL -->
+  <section class="panel" id="inputPanel">
+    <div class="panel-header">
+      <span class="panel-num">01</span>
+      <span class="panel-label" id="panelLabel">New Product</span>
+      <button class="btn-cancel-edit" id="cancelEdit" onclick="exitEditMode()" style="display:none">
+        <svg class="icon"><use href="#ic-x"/></svg> Cancel
+      </button>
+    </div>
+
+    <div class="inputs-grid">
+      <!-- NO placeholder on title or category per request -->
+      <div class="field full">
+        <div class="label-row">
+          <label for="title">Product Title</label>
+          <span class="char-count" id="titleCount">0 / 60</span>
+        </div>
+        <input type="text" id="title" maxlength="60"
+               autocomplete="off" autocorrect="off" spellcheck="false"
+               oninput="gettotal();updateCharCount()"/>
+      </div>
+
+      <div class="field">
+        <label for="price">Base Price ($)</label>
+        <div class="input-prefix-wrap">
+          <span class="input-prefix">$</span>
+          <input type="number" id="price" placeholder="0.00" data-placeholder="0.00"
+                 min="0" step="0.01" autocomplete="off" oninput="gettotal()"/>
+        </div>
+      </div>
+      <div class="field">
+        <label for="taxes">Tax Amount ($)</label>
+        <div class="input-prefix-wrap">
+          <span class="input-prefix">$</span>
+          <input type="number" id="taxes" placeholder="0.00" data-placeholder="0.00"
+                 min="0" step="0.01" autocomplete="off" oninput="gettotal()"/>
+        </div>
+      </div>
+      <div class="field">
+        <label for="ads">Ads Cost ($)</label>
+        <div class="input-prefix-wrap">
+          <span class="input-prefix">$</span>
+          <input type="number" id="ads" placeholder="0.00" data-placeholder="0.00"
+                 min="0" step="0.01" autocomplete="off" oninput="gettotal()"/>
+        </div>
+      </div>
+      <div class="field">
+        <label for="discount">Discount (%)</label>
+        <div class="input-prefix-wrap">
+          <span class="input-prefix"><svg class="icon" style="width:.75rem;height:.75rem"><use href="#ic-percent"/></svg></span>
+          <input type="number" id="discount" placeholder="0" data-placeholder="0"
+                 min="0" max="100" step="0.1" autocomplete="off" oninput="gettotal()"/>
+        </div>
+      </div>
+
+      <div class="field full">
+        <div id="totalDisplay" class="total-display">
+          <span class="total-label">TOTAL</span>
+          <span id="totalValue" class="total-value">—</span>
+        </div>
+      </div>
+
+      <div class="field" id="countWrapper">
+        <label for="count">Quantity</label>
+        <input type="number" id="count" placeholder="1"
+               data-placeholder="1" min="1" max="99" autocomplete="off"/>
+      </div>
+
+      <!-- NO placeholder on category per request -->
+      <div class="field">
+        <label for="category">Category</label>
+        <input type="text" id="category"
+               autocomplete="off" autocorrect="off" spellcheck="false"/>
+      </div>
+
+      <div class="field btn-field">
+        <label>&nbsp;</label>
+        <button id="submit" class="btn-primary ripple">
+          <svg class="icon"><use href="#ic-plus"/></svg>
+          <span id="submitLabel">Create Product</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTPUT PANEL -->
+  <section class="panel" id="outputPanel">
+    <div class="panel-header">
+      <span class="panel-num">02</span>
+      <span class="panel-label">Product List</span>
+      <div class="panel-actions">
+        <button class="btn-ghost" onclick="exportCSV()"><svg class="icon"><use href="#ic-download"/></svg> CSV</button>
+        <button class="btn-ghost" onclick="exportJSON()"><svg class="icon"><use href="#ic-download"/></svg> JSON</button>
+        <button class="btn-ghost" onclick="triggerImport()"><svg class="icon"><use href="#ic-upload"/></svg> Import</button>
+        <button class="btn-danger-ghost" id="deleteAllBtn" onclick="confirmDeleteAll()" style="display:none">
+          <svg class="icon"><use href="#ic-trash"/></svg> Delete All
+        </button>
+        <input type="file" id="importFile" accept=".json" style="display:none" onchange="importJSON(event)"/>
+      </div>
+    </div>
+
+    <div class="search-row">
+      <div class="search-wrap">
+        <svg class="search-icon-svg icon"><use href="#ic-search"/></svg>
+        <input type="text" id="search" placeholder="Search by title…"
+               oninput="searchData(this.value)" autocomplete="off" spellcheck="false"/>
+        <button class="search-clear" id="searchClear" onclick="clearSearch()" style="display:none">
+          <svg class="icon"><use href="#ic-x"/></svg>
+        </button>
+      </div>
+      <div class="btnsearch">
+        <button id="searchTitle"    class="btn-mode active" onclick="getSearchMood(this.id)"><svg class="icon"><use href="#ic-sort"/></svg> Title</button>
+        <button id="searchCategory" class="btn-mode"        onclick="getSearchMood(this.id)"><svg class="icon"><use href="#ic-tag"/></svg> Category</button>
+      </div>
+    </div>
+
+    <!-- PRICE FILTER -->
+    <div class="price-filter">
+      <svg class="icon" style="color:var(--muted)"><use href="#ic-filter"/></svg>
+      <label>Price range</label>
+      <div class="input-prefix-wrap" style="flex:0 0 110px">
+        <span class="input-prefix">$</span>
+        <input type="number" id="minPrice" placeholder="Min" min="0" step="0.01" autocomplete="off" oninput="showData()"/>
+      </div>
+      <span class="price-sep">—</span>
+      <div class="input-prefix-wrap" style="flex:0 0 110px">
+        <span class="input-prefix">$</span>
+        <input type="number" id="maxPrice" placeholder="Max" min="0" step="0.01" autocomplete="off" oninput="showData()"/>
+      </div>
+      <button class="btn-ghost btn-sm" onclick="clearPriceFilter()"><svg class="icon"><use href="#ic-x"/></svg></button>
+    </div>
+
+    <div id="categoryPills" class="category-pills"></div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th class="sortable" data-col="index"    onclick="sortBy('index')">#<span class="sort-arrow"></span></th>
+            <th class="sortable" data-col="title"    onclick="sortBy('title')">Title<span class="sort-arrow"></span></th>
+            <th class="sortable" data-col="price"    onclick="sortBy('price')">Price<span class="sort-arrow"></span></th>
+            <th>Taxes</th>
+            <th>Ads</th>
+            <th>Discount</th>
+            <th class="sortable" data-col="total"    onclick="sortBy('total')">Total<span class="sort-arrow"></span></th>
+            <th class="sortable" data-col="category" onclick="sortBy('category')">Category<span class="sort-arrow"></span></th>
+            <th colspan="3">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">◫</div>
+        <div class="empty-text">No products yet</div>
+        <div class="empty-sub">Add your first product above ↑</div>
+      </div>
+    </div>
+    <div class="pagination" id="pagination"></div>
+  </section>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
